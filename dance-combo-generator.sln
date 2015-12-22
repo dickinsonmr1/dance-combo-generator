@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F283A184-DCCE-443E-86F6-4098FA999C54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7E8CDF8-BFD5-4DD0-BA8E-FD68069905B7}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "dance-combo-generator", "src\dance-combo-generator\dance-combo-generator.xproj", "{B431E0F4-D637-4AD3-89EF-E4C18BC8F4DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B431E0F4-D637-4AD3-89EF-E4C18BC8F4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B431E0F4-D637-4AD3-89EF-E4C18BC8F4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B431E0F4-D637-4AD3-89EF-E4C18BC8F4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B431E0F4-D637-4AD3-89EF-E4C18BC8F4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B431E0F4-D637-4AD3-89EF-E4C18BC8F4DE} = {F283A184-DCCE-443E-86F6-4098FA999C54}
+	EndGlobalSection
+EndGlobal
