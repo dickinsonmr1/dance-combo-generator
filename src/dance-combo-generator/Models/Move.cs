@@ -17,6 +17,10 @@ namespace dance_combo_generator.Models
 
     public class Move
     {
-        public string Title { get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public MoveClassification Classification { get; set; }
+        public int NumberOfBeats { get; set; }
+        public int DifficultyLevel { get; set; }
     }
 }
