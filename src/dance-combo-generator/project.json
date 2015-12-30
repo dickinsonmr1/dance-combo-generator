@@ -5,6 +5,7 @@
   },
 
   "dependencies": {
+    "ExcelDataReader": "2.1.2.3",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Mvc.WebApiCompatShim": "6.0.0-rc1-final",
@@ -19,8 +20,11 @@
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Data": "4.0.0.0"
+      }
+    }
   },
 
   "exclude": [
