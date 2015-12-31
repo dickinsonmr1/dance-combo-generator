@@ -13,7 +13,7 @@ namespace dance_combo_generator.Controllers
     {
         private IDataStore dataStore;
 
-        public ComboController()//StaticDataStore dataStore)
+        public ComboController()
         {
             this.dataStore = new SpreadSheetDataStore();
         }
@@ -21,7 +21,9 @@ namespace dance_combo_generator.Controllers
         [HttpGet]
         public List<Move> Generate(int numberOfBeats)
         {
-            return dataStore.GetAllMoves();
+            var allMoves = dataStore.GetAllMoves();
+
+            return allMoves;//.Where()
         }
     }
 }

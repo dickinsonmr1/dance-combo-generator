@@ -170,5 +170,5 @@
 
         $scope.activate();
         //$scope.submit();
-    }]);
+    }]);    
 }());

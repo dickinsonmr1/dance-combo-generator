@@ -7,11 +7,38 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />    
+    <!--<link href="lib/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" />--> <!-- https://silviomoreto.github.io/bootstrap-select/ -->
+    <link href="lib//seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet" /> <!-- https://github.com/seiyria/bootstrap-slider -->
 </head>
 <body>
     <h1>Dance Combo Generator</h1>
-    <h4>Dance moves, stored in RavenDB and displayed by Angular / Bootstrap</h4>    
+    <h4>Dance moves, stored in RavenDB and displayed by Angular / Bootstrap</h4>
+
     <div ng-controller="DanceComboGeneratorController as vm">
+        <!--<select class="selectpicker">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+        </select>-->
+        <div class="well">
+            Number of moves in combo
+            <div>
+                <input id="slider1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="3" />
+                <span id="ex6CurrentSliderValLabel">Current Slider Value: <span id="slider1Val">3</span></span>
+            </div>
+        </div>
+        <div class="well">
+            Difficulty
+            <div>
+                <input id="slider2" data-slider-id='ex2Slider' type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1" />
+            </div>
+        </div>
+        <div class="well">
+            Number of beats
+            <div>
+                <input id="slider3" data-slider-id='ex3Slider' type="text" data-slider-min="4" data-slider-max="32" data-slider-step="4" data-slider-value="8" />
+            </div>
+        </div>
         <button type="button" ng-click="generateCombo()" class="btn btn-success" data-toggle="modal" data-target="#modalCombo"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Generate Combo</button>
         <div class="modal fade" id="modalCombo" role="dialog">
             <div class="modal-dialog">
@@ -44,5 +71,28 @@
 
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="lib/bootstrap-select/dist/js/bootstrap-select.min.js"></script>-->
+    <script src="lib/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+    <script type="text/javascript">
+        $("#slider1").slider({
+            tooltip: 'always',
+            handle: 'round',
+            tooltip_position: 'bottom'
+        });
+        $("#slider1").on("slide", function (slideEvt) {
+            $("#slider1Val").text(slideEvt.value);
+        });
+
+        $("#slider2").slider({
+            tooltip: 'always',
+            handle: 'round',
+            tooltip_position: 'bottom'
+        });
+        $("#slider3").slider({
+            tooltip: 'always',
+            handle: 'round',
+            tooltip_position: 'bottom'
+        });
+    </script>
 </body>
 </html>

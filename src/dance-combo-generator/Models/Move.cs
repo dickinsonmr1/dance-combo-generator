@@ -11,13 +11,19 @@ namespace dance_combo_generator.Models
         Lollies,
         OutAndIn,
         TossOut,
+        PopTurn,
         AdLib,
-        Progressive    
+        Progressive,
+        Style,
+        PrefabCombo,
+        Connection,
+        Redirect,
+        Turn
     }
 
     public class Move
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public MoveClassification Classification { get; set; }
         public int NumberOfBeats { get; set; }

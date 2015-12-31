@@ -23,13 +23,17 @@ namespace dance_combo_generator.DataStore
 
             foreach (var row in moves)
             {
-                var move = new Move
+                if (row.ItemArray.Any())
                 {
-                    Name = row["Name"].ToString(),
-                    NumberOfBeats = int.Parse(row["NumberOfBeats"].ToString()),
-                    DifficultyLevel = int.Parse(row["DifficultyLevel"].ToString())
-                };
-                allMoves.Add(move);
+                    var move = new Move
+                    {
+                        //Id = int.Parse(row["Id"].ToString()),
+                        Name = row["Name"].ToString(),
+                        NumberOfBeats = int.Parse(row["NumberOfBeats"].ToString()),
+                        DifficultyLevel = int.Parse(row["DifficultyLevel"].ToString())
+                    };
+                    allMoves.Add(move);
+                }
             }
         }
 
