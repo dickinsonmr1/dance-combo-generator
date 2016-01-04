@@ -17,7 +17,7 @@ namespace dance_combo_generator.DataStore
             allMoves = new List<Move>();
 
             // http://www.codeproject.com/Articles/670377/Use-Cross-Platform-OSS-ExcelDataReader-to-Read-Exc
-            string path = "movespreadsheet.xlsx";
+            const string path = "wwwroot/movespreadsheet.xlsx";
             var excelData = new ExcelData(path);
             var moves = excelData.getData("Sheet1");
 
@@ -27,7 +27,7 @@ namespace dance_combo_generator.DataStore
                 {
                     var move = new Move
                     {
-                        //Id = int.Parse(row["Id"].ToString()),
+                        Id = int.Parse(row["Id"].ToString()),
                         Name = row["Name"].ToString(),
                         NumberOfBeats = int.Parse(row["NumberOfBeats"].ToString()),
                         DifficultyLevel = int.Parse(row["DifficultyLevel"].ToString())

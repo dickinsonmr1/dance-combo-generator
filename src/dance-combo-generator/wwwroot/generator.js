@@ -84,10 +84,15 @@
 
         // https://stackoverflow.com/questions/26459525/how-to-modify-and-update-data-table-row-in-angular-js
         $scope.generateCombo = function () {
+            var numMoves = $('#slider1Val').text();
+            var numBeats = $('#slider3Val').text();
             $http({
                 url: "api/Combo",
                 method: "GET",
-                params: { numberOfBeats: vm.numberOfBeats }
+                params: {
+                    numberOfMoves: numMoves,
+                    numberOfBeats: numBeats
+                }
             }).then(function (response) {
                 vm.movesInCurrentCombo = response.data;
                 //vm.editGameId = response.data.GameId;

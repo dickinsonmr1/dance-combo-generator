@@ -30,13 +30,15 @@
         <div class="well">
             Difficulty
             <div>
-                <input id="slider2" data-slider-id='ex2Slider' type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1" />
+                <input id="slider2" data-slider-id='ex2Slider' type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1"/>
+                <span id="ex6CurrentSliderValLabel">Current Slider Value: <span id="slider2Val">3</span></span>
             </div>
         </div>
         <div class="well">
             Number of beats
             <div>
-                <input id="slider3" data-slider-id='ex3Slider' type="text" data-slider-min="4" data-slider-max="32" data-slider-step="4" data-slider-value="8" />
+                <input id="slider3" data-slider-id='ex3Slider' type="text" data-slider-min="4" data-slider-max="32" data-slider-step="4" data-slider-value="8"/>
+                <span id="ex6CurrentSliderValLabel">Current Slider Value: <span id="slider3Val">3</span></span>
             </div>
         </div>
         <button type="button" ng-click="generateCombo()" class="btn btn-success" data-toggle="modal" data-target="#modalCombo"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Generate Combo</button>
@@ -88,11 +90,19 @@
             handle: 'round',
             tooltip_position: 'bottom'
         });
+        $("#slider2").on("slide", function (slideEvt) {
+            $("#slider2Val").text(slideEvt.value);
+        });
+
         $("#slider3").slider({
             tooltip: 'always',
             handle: 'round',
             tooltip_position: 'bottom'
         });
+        $("#slider3").on("slide", function (slideEvt) {
+            $("#slider3Val").text(slideEvt.value);
+        });
+
     </script>
 </body>
 </html>

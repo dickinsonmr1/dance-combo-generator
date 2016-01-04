@@ -11,7 +11,7 @@ namespace dance_combo_generator.Controllers
     [Route("api/combo")]
     public class ComboController : Controller
     {
-        private IDataStore dataStore;
+        private readonly IDataStore dataStore;
 
         public ComboController()
         {
@@ -19,11 +19,20 @@ namespace dance_combo_generator.Controllers
         }
 
         [HttpGet]
-        public List<Move> Generate(int numberOfBeats)
+        public List<Move> Generate(int numberOfMoves, int numberOfBeats)
         {
             var allMoves = dataStore.GetAllMoves();
+            
+            var eligibleMoves = allMoves;//.Where(am => am.NumberOfBeats <= numberOfBeats).ToList();
 
-            return allMoves;//.Where()
+            var randomizer = new Random(DateTime.Now.Second);
+            var randomizedMoveIds = new List<int>();
+            for (var i = 0; i < numberOfMoves; i++)
+            {
+                randomizedMoveIds.Add(randomizer.Next(0, eligibleMoves.Count));
+            }
+            
+            return eligibleMoves.Where(em => randomizedMoveIds.Contains(em.Id)).Select(x => x).ToList();
         }
     }
 }
