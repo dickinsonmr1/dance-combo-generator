@@ -1,10 +1,9 @@
-﻿using dance_combo_generator.DataStore;
-using dance_combo_generator.Models;
-using Microsoft.AspNet.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using dance_combo_generator.DataStore;
+using dance_combo_generator.Models;
+using Microsoft.AspNet.Mvc;
 
 namespace dance_combo_generator.Controllers
 {
@@ -19,11 +18,11 @@ namespace dance_combo_generator.Controllers
         }
 
         [HttpGet]
-        public List<Move> Generate(int numberOfMoves, int numberOfBeats)
+        public List<Move> Generate(int numberOfMoves, int difficultyLevel)
         {
             var allMoves = dataStore.GetAllMoves();
-            
-            var eligibleMoves = allMoves;//.Where(am => am.NumberOfBeats <= numberOfBeats).ToList();
+
+            var eligibleMoves = allMoves.Where(x => x.DifficultyLevel <= difficultyLevel).ToList();
 
             var randomizer = new Random(DateTime.Now.Second);
             var randomizedMoveIds = new List<int>();

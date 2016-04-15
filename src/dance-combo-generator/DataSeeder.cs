@@ -1,8 +1,5 @@
-﻿using dance_combo_generator.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using dance_combo_generator.Models;
 
 namespace dance_combo_generator
 {

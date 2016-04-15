@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using dance_combo_generator.Models;
-using System.IO;
-using Excel;
-using System.Data;
 
 namespace dance_combo_generator.DataStore
 {
